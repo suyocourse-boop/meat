@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Сэтгэл салон | Үс засалт, будалт, гоо сайхан</title>
+<meta name="description" content="Сэтгэл салон: эрэгтэй, эмэгтэй үс засалт, будалт, маникюр. Утас: 9900-0000. Улаанбаатар.">
+<meta property="og:title" content="Сэтгэл салон">
+<meta property="og:description" content="Үс засалт, будалт, маникюр. Цаг захиалахад залгаарай.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&display=swap&subset=cyrillic" rel="stylesheet">
+<style>
+/* ===== ӨӨРЧЛӨХ ӨНГӨНҮҮД ===== */
+:root{
+  --bg:#0F0E0D;
+  --panel:#171513;
+  --ink:#F1EBDF;
+  --muted:#A59D8F;
+  --gold:#C8A96A;
+  --gold-soft:#E3CD9B;
+  --line:rgba(200,169,106,.35);
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Jost",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);font-weight:300;background:var(--bg);color:var(--ink);line-height:1.75;font-size:17px}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.1}
+
+/* Цэс */
+header{padding:26px 0;border-bottom:1px solid var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.logo{font-family:var(--serif);font-size:1.7rem;text-decoration:none;color:var(--gold-soft);letter-spacing:.04em}
+nav{display:flex;align-items:center;gap:28px;font-size:.95rem}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--gold-soft)}
+.nav-call{border:1px solid var(--gold);padding:9px 20px;color:var(--gold-soft)}
+.nav-call:hover{background:var(--gold);color:var(--bg)!important}
+@media(max-width:719px){nav a:not(.nav-call){display:none}}
+
+/* Зургийн хүрээ: зураг байхгүй бол гоёмсог арын дэвсгэр харагдана */
+.ph{position:relative;overflow:hidden;background:
+  radial-gradient(120% 90% at 30% 20%,#2a2419 0%,#15130f 60%,#0c0b0a 100%);}
+.ph::after{content:attr(data-label);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-size:1.3rem;color:rgba(200,169,106,.5);text-align:center;padding:16px}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;display:block}
+
+/* Нүүр хэсэг */
+.hero{padding:72px 0 88px}
+.hero .wrap{display:grid;gap:48px;align-items:center}
+@media(min-width:860px){.hero .wrap{grid-template-columns:1.05fr .95fr}}
+.hero h1{font-size:clamp(2.8rem,7.5vw,5rem);margin-bottom:24px;color:var(--ink)}
+.hero p{color:var(--muted);max-width:42ch;margin-bottom:36px;font-size:1.05rem}
+.btn{display:inline-block;padding:15px 34px;text-decoration:none;font-size:.98rem;letter-spacing:.04em;transition:background .25s,color .25s}
+.btn-gold{background:var(--gold);color:#1a150c;font-weight:500}
+.btn-gold:hover{background:var(--gold-soft)}
+.btn-ghost{border:1px solid var(--line);color:var(--ink);margin-left:10px}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold-soft)}
+@media(max-width:480px){.btn-ghost{margin:12px 0 0}}
+.hero-img{aspect-ratio:4/5;max-width:440px;width:100%;justify-self:center}
+.frame{position:relative;width:100%;max-width:440px;justify-self:center}
+.frame::before{content:"";position:absolute;inset:18px -18px -18px 18px;border:1px solid var(--gold);z-index:0}
+.frame .ph{position:relative;z-index:1}
+
+/* Хэсгүүд */
+section{padding:84px 0}
+.head{margin-bottom:44px;max-width:560px}
+h2{font-size:clamp(2rem,5vw,3rem);margin-bottom:12px;color:var(--ink)}
+.head p{color:var(--muted)}
+.rule{width:56px;height:1px;background:var(--gold);margin-bottom:22px}
+
+/* Галерей */
+.gallery{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+@media(min-width:760px){.gallery{grid-template-columns:repeat(4,1fr)}}
+.gallery .ph{aspect-ratio:3/4}
+.gallery .ph:nth-child(2),.gallery .ph:nth-child(4){margin-top:26px}
+@media(max-width:759px){.gallery .ph:nth-child(2),.gallery .ph:nth-child(4){margin-top:0}}
+
+/* Үнэ */
+.menu{background:var(--panel)}
+.menu-list{max-width:760px}
+.item{display:flex;align-items:baseline;gap:14px;padding:20px 0;border-bottom:1px solid rgba(200,169,106,.18)}
+.item:last-child{border-bottom:0}
+.item h3{font-size:1.5rem}
+.item small{display:block;color:var(--muted);font-size:.9rem;font-family:var(--sans)}
+.item .dots{flex:1;border-bottom:1px dotted var(--line);transform:translateY(-6px);min-width:20px}
+.item .price{font-family:var(--serif);font-size:1.4rem;color:var(--gold-soft);white-space:nowrap}
+
+/* Тухай */
+.about .wrap{display:grid;gap:56px;align-items:center}
+@media(min-width:860px){.about .wrap{grid-template-columns:.9fr 1.1fr}}
+.about .ph{aspect-ratio:1/1;max-width:440px;width:100%}
+.about p{color:var(--muted);margin-bottom:16px;max-width:52ch}
+
+/* Холбоо */
+.contact{background:var(--panel)}
+.cgrid{display:grid;gap:48px}
+@media(min-width:760px){.cgrid{grid-template-columns:1fr 1fr}}
+.cgrid h3{font-size:1.5rem;color:var(--gold-soft);margin-bottom:10px}
+.cgrid p{color:var(--muted);margin-bottom:6px}
+.phone{font-family:var(--serif);font-size:2.4rem;text-decoration:none;color:var(--ink)}
+.phone:hover{color:var(--gold-soft)}
+.hours{width:100%;border-collapse:collapse;color:var(--muted)}
+.hours td{padding:9px 0;border-bottom:1px solid rgba(200,169,106,.18)}
+.hours td:last-child{text-align:right;color:var(--ink)}
+.cgrid a.link{color:var(--gold-soft)}
+
+footer{padding:34px 0 44px;color:var(--muted);font-size:.88rem;text-align:center;border-top:1px solid var(--line)}
+
+/* Утсан дээрх залгах товч */
+.sticky{position:fixed;left:16px;right:16px;bottom:16px;z-index:20;text-align:center;background:var(--gold);color:#1a150c;
+  padding:15px;font-weight:500;text-decoration:none;letter-spacing:.04em;box-shadow:0 8px 24px rgba(0,0,0,.5)}
+@media(min-width:720px){.sticky{display:none}}
+@media(max-width:719px){footer{padding-bottom:96px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#">Сэтгэл</a>
+    <nav>
+      <a href="#gallery">Галерей</a>
+      <a href="#menu">Үнэ</a>
+      <a href="#about">Тухай</a>
+      <!-- ӨӨРЧЛӨХ: утасны дугаар -->
+      <a class="nav-call" href="tel:+97699000000">Цаг захиалах</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <!-- ӨӨРЧЛӨХ: гарчиг, тайлбар -->
+        <h1>Гоо сайханд зориулсан цаг мөч</h1>
+        <p>Эрэгтэй, эмэгтэй үс засалт, будалт, маникюр. Таны хүссэнийг сонсож, танд тохирохыг нь бүтээнэ.</p>
+        <a class="btn btn-gold" href="tel:+97699000000">Залгах: 9900-0000</a>
+        <a class="btn btn-ghost" href="#menu">Үнэ харах</a>
+      </div>
+      <!-- ЗУРАГ: images/hero.jpg (босоо зураг, 800x1000 орчим) -->
+      <div class="frame">
+        <div class="ph hero-img" data-label="Салоны зураг">
+          <!-- <img src="images/hero.jpg" alt="Сэтгэл салон дахь үс засалт" onerror="this.remove()"> -->
+          <img src="https://images.unsplash.com/photo-1773904215697-e6c21fc27ac2?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Сэтгэл салон дахь үс засалт" onerror="this.remove()">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="gallery">
+    <div class="wrap">
+      <div class="head">
+        <div class="rule"></div>
+        <h2>Бидний ажил</h2>
+        <p>Үйлчлүүлэгчдийнхээ дуртай хэв маягууд.</p>
+      </div>
+      <!-- ЗУРАГ: images/work1.jpg ... work4.jpg (босоо, 600x800 орчим) -->
+      <div class="gallery">
+        <div class="ph" data-label="Үс засалт"><img src="https://images.unsplash.com/photo-1761931403671-d020a14928d9?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Үс засалт" loading="lazy" onerror="this.remove()"></div>
+        <div class="ph" data-label="Будалт"><img src="https://images.unsplash.com/photo-1707812343087-c9ff9e5abb43?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Үс будалт" loading="lazy" onerror="this.remove()"></div>
+        <div class="ph" data-label="Үс тавилт"><img src="https://plus.unsplash.com/premium_photo-1669675936121-6d3d42244ab5?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Үс тавилт" loading="lazy" onerror="this.remove()"></div>
+        <div class="ph" data-label="Маникюр"><img src="https://images.unsplash.com/photo-1777287216954-2b4b22bb6bf2?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Маникюр" loading="lazy" onerror="this.remove()"></div>
+      </div>
+      <!-- <div class="gallery">
+        <div class="ph" data-label="Үс засалт"><img src="images/work1.jpg" alt="Үс засалт" loading="lazy" onerror="this.remove()"></div>
+        <div class="ph" data-label="Будалт"><img src="images/work2.jpg" alt="Үс будалт" loading="lazy" onerror="this.remove()"></div>
+        <div class="ph" data-label="Үс тавилт"><img src="images/work3.jpg" alt="Үс тавилт" loading="lazy" onerror="this.remove()"></div>
+        <div class="ph" data-label="Маникюр"><img src="images/work4.jpg" alt="Маникюр" loading="lazy" onerror="this.remove()"></div>
+      </div> -->
+    </div>
+  </section>
+
+  <section class="menu" id="menu">
+    <div class="wrap">
+      <div class="head">
+        <div class="rule"></div>
+        <h2>Үйлчилгээ, үнэ</h2>
+        <p>Үнэ үсний урт, нягтралаас хамаарч бага зэрэг өөрчлөгдөж болно.</p>
+      </div>
+      <!-- ӨӨРЧЛӨХ: нэг үйлчилгээ = нэг "item" блок. Хуулж нэмж, устгаж болно -->
+      <div class="menu-list">
+        <div class="item"><div><h3>Эрэгтэй үс засалт</h3><small>Угаалга, хэлбэржүүлэлт</small></div><span class="dots"></span><span class="price">20,000₮</span></div>
+        <div class="item"><div><h3>Эмэгтэй үс засалт</h3><small>Угаалга, засалт, хатаалт</small></div><span class="dots"></span><span class="price">35,000₮-өөс</span></div>
+        <div class="item"><div><h3>Хүүхдийн үс засалт</h3><small>12 хүртэлх нас</small></div><span class="dots"></span><span class="price">15,000₮</span></div>
+        <div class="item"><div><h3>Үс будалт</h3><small>Бүтэн будалт, үндэс будалт</small></div><span class="dots"></span><span class="price">80,000₮-өөс</span></div>
+        <div class="item"><div><h3>Маникюр</h3><small>Энгийн эсвэл гель</small></div><span class="dots"></span><span class="price">25,000₮-өөс</span></div>
+        <div class="item"><div><h3>Хуримын үс</h3><small>Урьдчилж захиална</small></div><span class="dots"></span><span class="price">60,000₮-өөс</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <!-- ЗУРАГ: images/about.jpg (дөрвөлжин, 800x800 орчим) -->
+      <div class="ph" data-label="Манай баг"><img src="https://plus.unsplash.com/premium_photo-1661380558859-40df8dd91dfd?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Сэтгэл салоны баг" loading="lazy" onerror="this.remove()"></div>
+      <!-- <div class="ph" data-label="Манай баг"><img src="images/about.jpg" alt="Сэтгэл салоны баг" loading="lazy" onerror="this.remove()"></div> -->
+      <div>
+        <div class="rule"></div>
+        <h2>Бидний тухай</h2>
+        <!-- ӨӨРЧЛӨХ: өөрийн үгээр бичнэ -->
+        <p>Сэтгэл салон 2018 оноос хойш Улаанбаатарт ажиллаж байна. Манай мастерууд 5-аас дээш жилийн туршлагатай.</p>
+        <p>Бид үйлчлүүлэгч бүрийн хүсэлтийг эхэлж сонсож, дараа нь үсэнд нь тохирох сонголтыг санал болгодог.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="head">
+        <div class="rule"></div>
+        <h2>Холбоо барих</h2>
+        <p>Залгаад цагаа захиална уу.</p>
+      </div>
+      <div class="cgrid">
+        <div>
+          <h3>Утас</h3>
+          <p><a class="phone" href="tel:+97699000000">9900-0000</a></p>
+          <h3 style="margin-top:26px">Хаяг</h3>
+          <!-- ӨӨРЧЛӨХ: хаяг ба газрын зургийн холбоос -->
+          <p>Улаанбаатар, Сүхбаатар дүүрэг, 1-р хороо, Жишээ гудамж 12 тоот</p>
+          <p><a class="link" href="https://www.google.com/maps/search/?api=1&query=Ulaanbaatar" target="_blank" rel="noopener">Газрын зураг дээр харах</a></p>
+          <p><a class="link" href="https://facebook.com/" target="_blank" rel="noopener">Facebook хуудас</a></p>
+        </div>
+        <div>
+          <h3>Ажиллах цаг</h3>
+          <table class="hours">
+            <tr><td>Даваа – Баасан</td><td>10:00 – 20:00</td></tr>
+            <tr><td>Бямба</td><td>10:00 – 18:00</td></tr>
+            <tr><td>Ням</td><td>11:00 – 16:00</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>© 2026 Сэтгэл салон. Бүх эрх хуулиар хамгаалагдсан.</footer>
+<a class="sticky" href="tel:+97699000000">Залгаж цаг захиалах</a>
+
+</body>
+</html>
